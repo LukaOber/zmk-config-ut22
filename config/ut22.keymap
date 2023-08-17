@@ -340,6 +340,9 @@
 		COMBO(204,&kp DEL,TIR TMR TRR OTR)
 		COMBO(205,&sk RALT,BIL BML BRL ITL)
 		COMBO(206,&sk RALT,BIR BMR BRR ITR)
+        // bootloader
+        COMBO(207,&bootloader, BPL BRL BML BIL TIR TMR TRR TPR)
+        COMBO(208,&bootloader, TPL TRL TML TIL BIR BMR BRR BPR)
 
     };
 
