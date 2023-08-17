@@ -32,30 +32,38 @@
 // {Top,Bottom}{Left,Right}{Index,Middle,Ring,Pinky}
 
 // LEFT SIDE
-#define TLI 3 // TOP
-#define TLM 2 // TOP
-#define TLR 1 // TOP
-#define TLP 0 // TOP
-#define BLI 11 // BOTTOM
-#define BLM 10 // BOTTOM
-#define BLR 9 // BOTTOM
-#define BLP 8 // BOTTOM
-#define LOT 18 // O-THUMB
-#define LIT 17 // I-THUMB
-#define LEP 16 // EXTRA PINKY
+//   TOP
+#define TIL 3  // INDEX
+#define TML 2  // MIDDLE
+#define TRL 1  // RING
+#define TPL 0  // PINKY
+//   BOTTOM
+#define BIL 11 // INDEX
+#define BML 10 // MIDDLE
+#define BRL 9  // RING
+#define BPL 8  // PINKY
+//   THUMBS
+#define OTL 18 // OUTER (reachy)
+#define ITL 17 // INNER (tucky)
+// [unused]
+// #define EPL 16 // EXTRA PINKY
 
 // RIGHT SIDE
-#define TRI 4 // TOP
-#define TRM 5 // TOP
-#define TRR 6 // TOP
-#define TRP 7 // TOP
-#define BRI 12 // BOTTOM
-#define BRM 13 // BOTTOM
-#define BRR 14 // BOTTOM
-#define BRP 15 // BOTTOM
-#define ROT 19 // O-THUMB
-#define RIT 20 // I-THUMB
-#define REP 21 // EXTRA PINKY
+//   TOP
+#define TIR 4  // INDEX
+#define TMR 5  // MIDDLE
+#define TRR 6  // RING
+#define TPR 7  // PINKY
+//   BOTTOM
+#define BIR 12 // INDEX
+#define BMR 13 // MIDDLE
+#define BRR 14 // RING
+#define BPR 15 // PINKY
+//   THUMBS
+#define OTR 19 // OUTER (reachy)
+#define ITR 20 // INNER (tucky)
+// [unused]
+// #define EPR 21 // EXTRA PINKY
 
 // BEHAVIOR
 // ====================================================
@@ -97,212 +105,241 @@
 
     combos {
         compatible = "zmk,combos";
-		COMBO(1,&kp LS(E),BLI LOT)
-		COMBO(2,&kp LS(E),BRI ROT)
-		COMBO(3,&kp LS(T),BLM LOT)
-		COMBO(4,&kp LS(T),BRM ROT)
-		COMBO(5,&kp LS(O),BLR LOT)
-		COMBO(6,&kp LS(O),BRR ROT)
-		COMBO(7,&kp LS(A),BLP LOT)
-		COMBO(8,&kp LS(A),BRP ROT)
-		COMBO(9,&kp LPAR,BLI LIT)
-		COMBO(10,&kp LPAR,BRI RIT)
-		COMBO(11,&kp LBKT,BLM LIT)
-		COMBO(12,&kp LBKT,BRM RIT)
-		COMBO(13,&kp LBRC,BLR LIT)
-		COMBO(14,&kp LBRC,BRR RIT)
-		COMBO(15,&kp LT,BLP LIT)
-		COMBO(16,&kp LT,BRP RIT)
-		COMBO(17,&kp LS(I),LOT TLI)
-		COMBO(18,&kp LS(I),ROT TRI)
-		COMBO(19,&kp LS(N),LOT TLM)
-		COMBO(20,&kp LS(N),ROT TRM)
-		COMBO(21,&kp LS(S),LOT TLR)
-		COMBO(22,&kp LS(S),ROT TRR)
-		COMBO(23,&kp LS(R),LOT TLP)
-		COMBO(24,&kp LS(R),ROT TRP)
-		COMBO(25,&kp RPAR,LIT TLI)
-		COMBO(26,&kp RPAR,RIT TRI)
-		COMBO(27,&kp RBKT,LIT TLM)
-		COMBO(28,&kp RBKT,RIT TRM)
-		COMBO(29,&kp RBRC,LIT TLR)
-		COMBO(30,&kp RBRC,RIT TRR)
-		COMBO(31,&kp GT,LIT TLP)
-		COMBO(32,&kp GT,RIT TRP)
-		COMBO(33,&kp H,BLI BLM)
-		COMBO(34,&kp H,BRI BRM)
-		COMBO(35,&kp L,BLP BLR)
-		COMBO(36,&kp L,BRP BRR)
-		COMBO(37,&kp Y,TLI TLM)
-		COMBO(38,&kp Y,TRI TRM)
-		COMBO(39,&kp B,TLP TLR)
-		COMBO(40,&kp B,TRP TRR)
-		COMBO(41,&kp LS(H),BLI BLM LOT)
-		COMBO(42,&kp LS(H),BRI BRM ROT)
-		COMBO(43,&kp LS(L),BLP BLR LOT)
-		COMBO(44,&kp LS(L),BRP BRR ROT)
-		COMBO(45,&kp LS(Y),LOT TLI TLM)
-		COMBO(46,&kp LS(Y),ROT TRI TRM)
-		COMBO(47,&kp LS(B),LOT TLP TLR)
-		COMBO(48,&kp LS(B),ROT TRP TRR)
-		COMBO(49,&kp N0,BLI BLM LIT)
-		COMBO(50,&kp N0,BRI BRM RIT)
-		COMBO(51,&kp N4,BLP BLR LIT)
-		COMBO(52,&kp N4,BRP BRR RIT)
-		COMBO(53,&kp N5,LIT TLI TLM)
-		COMBO(54,&kp N5,RIT TRI TRM)
-		COMBO(55,&kp N9,LIT TLP TLR)
-		COMBO(56,&kp N9,RIT TRP TRR)
-		COMBO(57,&kp G,TLI TLP)
-		COMBO(58,&kp G,TRI TRP)
-		COMBO(59,&kp U,BLM BLR)
-		COMBO(60,&kp U,BRM BRR)
-		COMBO(61,&kp D,BLI BLP)
-		COMBO(62,&kp D,BRI BRP)
-		COMBO(63,&kp P,TLM TLR)
-		COMBO(64,&kp P,TRM TRR)
-		COMBO(65,&kp LS(G),LOT TLI TLP)
-		COMBO(66,&kp LS(G),ROT TRI TRP)
-		COMBO(67,&kp LS(U),BLM BLR LOT)
-		COMBO(68,&kp LS(U),BRM BRR ROT)
-		COMBO(69,&kp LS(D),BLI BLP LOT)
-		COMBO(70,&kp LS(D),BRI BRP ROT)
-		COMBO(71,&kp LS(P),LOT TLM TLR)
-		COMBO(72,&kp LS(P),ROT TRM TRR)
-		COMBO(73,&kp HASH,LIT TLI TLP)
-		COMBO(74,&kp HASH,RIT TRI TRP)
-		COMBO(75,&kp N2,BLM BLR LIT)
-		COMBO(76,&kp N2,BRM BRR RIT)
-		COMBO(77,&kp AT,BLI BLP LIT)
-		COMBO(78,&kp AT,BRI BRP RIT)
-		COMBO(79,&kp N7,LIT TLM TLR)
-		COMBO(80,&kp N7,RIT TRM TRR)
-		COMBO(81,&kp C,BLI BLR)
-		COMBO(82,&kp C,BRI BRR)
-		COMBO(83,&kp Q,BLM BLP)
-		COMBO(84,&kp Q,BRM BRP)
-		COMBO(85,&kp F,TLI TLR)
-		COMBO(86,&kp F,TRI TRR)
-		COMBO(87,&kp Z,TLM TLP)
-		COMBO(88,&kp Z,TRM TRP)
-		COMBO(89,&kp LS(C),BLI BLR LOT)
-		COMBO(90,&kp LS(C),BRI BRR ROT)
-		COMBO(91,&kp LS(Q),BLM BLP LOT)
-		COMBO(92,&kp LS(Q),BRM BRP ROT)
-		COMBO(93,&kp LS(F),LOT TLI TLR)
-		COMBO(94,&kp LS(F),ROT TRI TRR)
-		COMBO(95,&kp LS(Z),LOT TLM TLP)
-		COMBO(96,&kp LS(Z),ROT TRM TRP)
-		COMBO(97,&kp N1,BLI BLR LIT)
-		COMBO(98,&kp N1,BRI BRR RIT)
-		COMBO(99,&kp N3,BLM BLP LIT)
-		COMBO(100,&kp N3,BRM BRP RIT)
-		COMBO(101,&kp N6,LIT TLI TLR)
-		COMBO(102,&kp N6,RIT TRI TRR)
-		COMBO(103,&kp N8,LIT TLM TLP)
-		COMBO(104,&kp N8,RIT TRM TRP)
-		COMBO(105,&kp V,BLI TLR)
-		COMBO(106,&kp V,BRI TRR)
-		COMBO(107,&kp X,BLM TLP)
-		COMBO(108,&kp X,BRM TRP)
-		COMBO(109,&kp K,BLR TLI)
-		COMBO(110,&kp K,BRR TRI)
-		COMBO(111,&kp J,BLP TLM)
-		COMBO(112,&kp J,BRP TRM)
-		COMBO(113,&kp LS(V),BLI LOT TLR)
-		COMBO(114,&kp LS(V),BRI ROT TRR)
-		COMBO(115,&kp LS(X),BLM LOT TLP)
-		COMBO(116,&kp LS(X),BRM ROT TRP)
-		COMBO(117,&kp LS(K),BLR LOT TLI)
-		COMBO(118,&kp LS(K),BRR ROT TRI)
-		COMBO(119,&kp LS(J),BLP LOT TLM)
-		COMBO(120,&kp LS(J),BRP ROT TRM)
-		COMBO(121,&kp STAR,BLI LIT TLR)
-		COMBO(122,&kp STAR,BRI RIT TRR)
-		COMBO(123,&kp CARET,BLM LIT TLP)
-		COMBO(124,&kp CARET,BRM RIT TRP)
-		COMBO(125,&kp PLUS,BLR LIT TLI)
-		COMBO(126,&kp PLUS,BRR RIT TRI)
-		COMBO(127,&kp EQUAL,BLP LIT TLM)
-		COMBO(128,&kp EQUAL,BRP RIT TRM)
-		COMBO(129,&kp MINUS,BLR TLM)
-		COMBO(130,&kp MINUS,BRR TRM)
-		COMBO(131,&kp W,BLP TLI)
-		COMBO(132,&kp W,BRP TRI)
-		COMBO(133,&kp M,BLI TLP)
-		COMBO(134,&kp M,BRI TRP)
-		COMBO(135,&kp FSLH,BLM TLR)
-		COMBO(136,&kp FSLH,BRM TRR)
-		COMBO(137,&kp UNDER,BLR LOT TLM)
-		COMBO(138,&kp UNDER,BRR ROT TRM)
-		COMBO(139,&kp LS(W),BLP LOT TLI)
-		COMBO(140,&kp LS(W),BRP ROT TRI)
-		COMBO(141,&kp LS(M),BLI LOT TLP)
-		COMBO(142,&kp LS(M),BRI ROT TRP)
-		COMBO(143,&kp BSLH,BLM LOT TLR)
-		COMBO(144,&kp BSLH,BRM ROT TRR)
-		COMBO(145,&kp PRCNT,BLR LIT TLM)
-		COMBO(146,&kp PRCNT,BRR RIT TRM)
-		COMBO(147,&kp AMPS,BLP LIT TLI)
-		COMBO(148,&kp AMPS,BRP RIT TRI)
-		COMBO(149,&kp DLLR,BLI LIT TLP)
-		COMBO(150,&kp DLLR,BRI RIT TRP)
-		COMBO(151,&kp PIPE,BLM LIT TLR)
-		COMBO(152,&kp PIPE,BRM RIT TRR)
-		COMBO(153,&kp SQT,BLP TLR)
-		COMBO(154,&kp SQT,BRP TRR)
-		COMBO(155,&kp SEMI,BLR TLP)
-		COMBO(156,&kp SEMI,BRR TRP)
-		COMBO(157,&kp QMARK,BLM TLI)
-		COMBO(158,&kp QMARK,BRM TRI)
-		COMBO(159,&kp COMMA,BLI TLM)
-		COMBO(160,&kp COMMA,BRI TRM)
-		COMBO(161,&kp DQT,BLP LOT TLR)
-		COMBO(162,&kp DQT,BRP ROT TRR)
-		COMBO(163,&kp COLON,BLR LOT TLP)
-		COMBO(164,&kp COLON,BRR ROT TRP)
-		COMBO(165,&kp EXCL,BLM LOT TLI)
-		COMBO(166,&kp EXCL,BRM ROT TRI)
-		COMBO(167,&kp DOT,BLI LOT TLM)
-		COMBO(168,&kp DOT,BRI ROT TRM)
-		COMBO(169,&kp GRAVE,BLP LIT TLR)
-		COMBO(170,&kp GRAVE,BRP RIT TRR)
-		COMBO(171,&kp TILDE,BLI LIT TLM)
-		COMBO(172,&kp TILDE,BRI RIT TRM)
-		COMBO(173,&sk LEFT_CONTROL,BLP TLP)
-		COMBO(174,&sk LEFT_CONTROL,BRP TRP)
-		COMBO(175,&sk LEFT_ALT,BLR TLR)
+        // outer thumb + single key, bottom
+		COMBO(1,&kp LS(N),OTL BIL) // ····           ····
+		COMBO(2,&kp LS(N),OTR BIR) // ···X ·X     X· X···
+		COMBO(3,&kp LS(A),OTL BML) // ····           ····
+		COMBO(4,&kp LS(A),OTR BMR) // ··X· ·X     X· ·X··
+		COMBO(5,&kp LS(I),OTL BRL) // ····           ····
+		COMBO(6,&kp LS(I),OTR BRR) // ·X·· ·X     X· ··X·
+		COMBO(7,&kp LS(O),OTL BPL) // ····           ····
+		COMBO(8,&kp LS(O),OTR BPR) // X··· ·X     X· ···X
+        // inner thumb + single key, bottom
+		COMBO(9,&kp LPAR,ITL BIL)  // ····           ····
+		COMBO(10,&kp LPAR,ITR BIR) // ···X X·     ·X X···
+		COMBO(11,&kp LBKT,ITL BML) // ····           ····
+		COMBO(12,&kp LBKT,ITR BMR) // ··X· X·     ·X ·X··
+		COMBO(13,&kp LBRC,ITL BRL) // ····           ····
+		COMBO(14,&kp LBRC,ITR BRR) // ·X·· X·     ·X ··X·
+		COMBO(15,&kp LT,ITL BPL)   // ····           ····
+		COMBO(16,&kp LT,ITR BPR)   // X··· X·     ·X ···X
+        // outer thumb + single key, top
+		COMBO(17,&kp LS(E),OTL TIL) // ···X     |     X···
+		COMBO(18,&kp LS(E),OTR TIR) // ···· ·X  |  X· ····
+		COMBO(19,&kp LS(T),OTL TML) // ··X·     |     ·X··
+		COMBO(20,&kp LS(T),OTR TMR) // ···· ·X  |  X· ····
+		COMBO(21,&kp LS(S),OTL TRL) // ·X··     |     ··X·
+		COMBO(22,&kp LS(S),OTR TRR) // ···· ·X  |  X· ····
+		COMBO(23,&kp LS(R),OTL TPL) // X···     |     ···X
+		COMBO(24,&kp LS(R),OTR TPR) // ···· ·X  |  X· ····
+        // inner thumb + single key, top
+		COMBO(25,&kp RPAR,ITL TIL) // ···X     |     X···
+		COMBO(26,&kp RPAR,ITR TIR) // ···· X·  |  ·X ····
+		COMBO(27,&kp RBKT,ITL TML) // ··X·     |     ·X··
+		COMBO(28,&kp RBKT,ITR TMR) // ···· X·  |  ·X ····
+		COMBO(29,&kp RBRC,ITL TRL) // ·X··     |     ··X·
+		COMBO(30,&kp RBRC,ITR TRR) // ···· X·  |  ·X ····
+		COMBO(31,&kp GT,  ITL TPL) // X···     |     ···X
+		COMBO(32,&kp GT,  ITR TPR) // ···· X·  |  ·X ····
+        // two-finger combos, bottom, IM/RP
+		COMBO(33,&kp H,BIL BML)
+		COMBO(34,&kp H,BIR BMR)
+		COMBO(35,&kp L,BPL BRL)
+		COMBO(36,&kp L,BPR BRR)
+        // two-finger combos, top, IM/RP
+		COMBO(37,&kp Y,TIL TML)
+		COMBO(38,&kp Y,TIR TMR)
+		COMBO(39,&kp B,TPL TRL)
+		COMBO(40,&kp B,TPR TRR)
+        // shifted, bottom, IM/RP
+		COMBO(41,&kp LS(H),OTL BIL BML)
+		COMBO(42,&kp LS(H),OTR BIR BMR)
+		COMBO(43,&kp LS(L),OTL BPL BRL)
+		COMBO(44,&kp LS(L),OTR BPR BRR)
+        // shifted, top, IM/RP
+		COMBO(45,&kp LS(Y),OTL TIL TML)
+		COMBO(46,&kp LS(Y),OTR TIR TMR)
+		COMBO(47,&kp LS(B),OTL TPL TRL)
+		COMBO(48,&kp LS(B),OTR TPR TRR)
+        // inner thumb combos, bottom: numbers
+		COMBO(49,&kp N0,ITL BIL BML)
+		COMBO(50,&kp N0,ITR BIR BMR)
+		COMBO(51,&kp N4,ITL BPL BRL)
+		COMBO(52,&kp N4,ITR BPR BRR)
+        // inner thumb combos, top: numbers
+		COMBO(53,&kp N5,ITL TIL TML)
+		COMBO(54,&kp N5,ITR TIR TMR)
+		COMBO(55,&kp N9,ITL TPL TRL)
+		COMBO(56,&kp N9,ITR TPR TRR)
+        // same-row IP/MR
+		COMBO(57,&kp G,TIL TPL)
+		COMBO(58,&kp G,TIR TPR)
+		COMBO(59,&kp U,BML BRL)
+		COMBO(60,&kp U,BMR BRR)
+		COMBO(61,&kp D,BIL BPL)
+		COMBO(62,&kp D,BIR BPR)
+		COMBO(63,&kp P,TML TRL)
+		COMBO(64,&kp P,TMR TRR)
+        // shifted same-row IP/MR
+		COMBO(65,&kp LS(G),OTL TIL TPL)
+		COMBO(66,&kp LS(G),OTR TIR TPR)
+		COMBO(67,&kp LS(U),OTL BML BRL)
+		COMBO(68,&kp LS(U),OTR BMR BRR)
+		COMBO(69,&kp LS(D),OTL BIL BPL)
+		COMBO(70,&kp LS(D),OTR BIR BPR)
+		COMBO(71,&kp LS(P),OTL TML TRL)
+		COMBO(72,&kp LS(P),OTR TMR TRR)
+        // inner-thumb combos: numbers and symbols
+		COMBO(73,&kp HASH,ITL TIL TPL)
+		COMBO(74,&kp HASH,ITR TIR TPR)
+		COMBO(75,&kp N2,  ITL BML BRL)
+		COMBO(76,&kp N2,  ITR BMR BRR)
+		COMBO(77,&kp AT,  ITL BIL BPL)
+		COMBO(78,&kp AT,  ITR BIR BPR)
+		COMBO(79,&kp N7,  ITL TML TRL)
+		COMBO(80,&kp N7,  ITR TMR TRR)
+        // more two-finger alphas
+		COMBO(81,&kp C,BIL BRL)
+		COMBO(82,&kp C,BIR BRR)
+		COMBO(83,&kp Q,BML BPL)
+		COMBO(84,&kp Q,BMR BPR)
+		COMBO(85,&kp F,TIL TRL)
+		COMBO(86,&kp F,TIR TRR)
+		COMBO(87,&kp Z,TML TPL)
+		COMBO(88,&kp Z,TMR TPR)
+        // shifted versions
+		COMBO(89,&kp LS(C),OTL BIL BRL)
+		COMBO(90,&kp LS(C),OTR BIR BRR)
+		COMBO(91,&kp LS(Q),OTL BML BPL)
+		COMBO(92,&kp LS(Q),OTR BMR BPR)
+		COMBO(93,&kp LS(F),OTL TIL TRL)
+		COMBO(94,&kp LS(F),OTR TIR TRR)
+		COMBO(95,&kp LS(Z),OTL TML TPL)
+		COMBO(96,&kp LS(Z),OTR TMR TPR)
+        // inner-thumb combos: numbers
+		COMBO(97,&kp N1, ITL BIL BRL)
+		COMBO(98,&kp N1, ITR BIR BRR)
+		COMBO(99,&kp N3, ITL BML BPL)
+		COMBO(100,&kp N3,ITR BMR BPR)
+		COMBO(101,&kp N6,ITL TIL TRL)
+		COMBO(102,&kp N6,ITR TIR TRR)
+		COMBO(103,&kp N8,ITL TML TPL)
+		COMBO(104,&kp N8,ITR TMR TPR)
+        // two-finger combos: alphas
+		COMBO(105,&kp V,BIL TRL)
+		COMBO(106,&kp V,BIR TRR)
+		COMBO(107,&kp X,BML TPL)
+		COMBO(108,&kp X,BMR TPR)
+		COMBO(109,&kp K,BRL TIL)
+		COMBO(110,&kp K,BRR TIR)
+		COMBO(111,&kp J,BPL TML)
+		COMBO(112,&kp J,BPR TMR)
+        // shifted versions
+		COMBO(113,&kp LS(V),OTL BIL TRL)
+		COMBO(114,&kp LS(V),OTR BIR TRR)
+		COMBO(115,&kp LS(X),OTL BML TPL)
+		COMBO(116,&kp LS(X),OTR BMR TPR)
+		COMBO(117,&kp LS(K),OTL BRL TIL)
+		COMBO(118,&kp LS(K),OTR BRR TIR)
+		COMBO(119,&kp LS(J),OTL BPL TML)
+		COMBO(120,&kp LS(J),OTR BPR TMR)
+        // inner-thumb combos
+		COMBO(121,&kp STAR, ITL BIL TRL)
+		COMBO(122,&kp STAR, ITR BIR TRR)
+		COMBO(123,&kp CARET,ITL BML TPL)
+		COMBO(124,&kp CARET,ITR BMR TPR)
+		COMBO(125,&kp PLUS, ITL BRL TIL)
+		COMBO(126,&kp PLUS, ITR BRR TIR)
+		COMBO(127,&kp EQUAL,ITL BPL TML)
+		COMBO(128,&kp EQUAL,ITR BPR TMR)
+        // two-finger combos
+		COMBO(129,&kp MINUS,BRL TML)
+		COMBO(130,&kp MINUS,BRR TMR)
+		COMBO(131,&kp W,    BPL TIL)
+		COMBO(132,&kp W,    BPR TIR)
+		COMBO(133,&kp M,    BIL TPL)
+		COMBO(134,&kp M,    BIR TPR)
+		COMBO(135,&kp FSLH, BML TRL)
+		COMBO(136,&kp FSLH, BMR TRR)
+        // shifted versions
+		COMBO(137,&kp UNDER,OTL BRL TML)
+		COMBO(138,&kp UNDER,OTR BRR TMR)
+		COMBO(139,&kp LS(W),OTL BPL TIL)
+		COMBO(140,&kp LS(W),OTR BPR TIR)
+		COMBO(141,&kp LS(M),OTL BIL TPL)
+		COMBO(142,&kp LS(M),OTR BIR TPR)
+		COMBO(143,&kp BSLH, OTL BML TRL)
+		COMBO(144,&kp BSLH, OTR BMR TRR)
+        // inner-thumb combos
+		COMBO(145,&kp PRCNT,ITL BRL TML)
+		COMBO(146,&kp PRCNT,ITR BRR TMR)
+		COMBO(147,&kp AMPS, ITL BPL TIL)
+		COMBO(148,&kp AMPS, ITR BPR TIR)
+		COMBO(149,&kp DLLR, ITL BIL TPL)
+		COMBO(150,&kp DLLR, ITR BIR TPR)
+		COMBO(151,&kp PIPE, ITL BML TRL)
+		COMBO(152,&kp PIPE, ITR BMR TRR)
+        // two-finger combos
+		COMBO(153,&kp SQT,  BPL TRL)
+		COMBO(154,&kp SQT,  BPR TRR)
+		COMBO(155,&kp SEMI, BRL TPL)
+		COMBO(156,&kp SEMI, BRR TPR)
+		COMBO(157,&kp QMARK,BML TIL)
+		COMBO(158,&kp QMARK,BMR TIR)
+		COMBO(159,&kp COMMA,BIL TML)
+		COMBO(160,&kp COMMA,BIR TMR)
+        // shifted versions
+		COMBO(161,&kp DQT,  BPL OTL TRL)
+		COMBO(162,&kp DQT,  BPR OTR TRR)
+		COMBO(163,&kp COLON,BRL OTL TPL)
+		COMBO(164,&kp COLON,BRR OTR TPR)
+		COMBO(165,&kp EXCL, BML OTL TIL)
+		COMBO(166,&kp EXCL, BMR OTR TIR)
+		COMBO(167,&kp DOT,  BIL OTL TML)
+		COMBO(168,&kp DOT,  BIR OTR TMR)
+        // inner-thumb combos
+		COMBO(169,&kp GRAVE,BPL ITL TRL)
+		COMBO(170,&kp GRAVE,BPR ITR TRR)
+		COMBO(171,&kp TILDE,BIL ITL TML)
+		COMBO(172,&kp TILDE,BIR ITR TMR)
+        // sticky mods
+		COMBO(173,&sk LEFT_CONTROL,BPL TPL)
+		COMBO(174,&sk LEFT_CONTROL,BPR TPR)
+		COMBO(175,&sk LEFT_ALT,BRL TRL)
 		COMBO(176,&sk LEFT_ALT,BRR TRR)
-		COMBO(177,&sk LEFT_GUI,BLM TLM)
-		COMBO(178,&sk LEFT_GUI,BRM TRM)
-		COMBO(179,&sk LEFT_SHIFT,BLI TLI)
-		COMBO(180,&sk LEFT_SHIFT,BRI TRI)
-		COMBO(181,&kp RIGHT,BLP TLP LOT)
-		COMBO(182,&kp RIGHT,BRP TRP ROT)
-		COMBO(183,&kp UP,BLR TLR LOT)
-		COMBO(184,&kp UP,BRR TRR ROT)
-		COMBO(185,&kp DOWN,BLM TLM LOT)
-		COMBO(186,&kp DOWN,BRM TRM ROT)
-		COMBO(187,&kp LEFT,BLI TLI LOT)
-		COMBO(188,&kp LEFT,BRI TRI ROT)
-		COMBO(189,&kp PG_UP,BLP TLP LIT)
-		COMBO(190,&kp PG_UP,BRP TRP RIT)
-		COMBO(191,&kp HOME,BLR TLR LIT)
-		COMBO(192,&kp HOME,BRR TRR RIT)
-		COMBO(193,&kp END,BLM TLM LIT)
-		COMBO(194,&kp END,BRM TRM RIT)
-		COMBO(195,&kp PG_DN,BLI TLI LIT)
-		COMBO(196,&kp PG_DN,BRI TRI RIT)
-		COMBO(197,&kp ENTER,BLI BLM BLR)
-		COMBO(198,&kp ENTER,BRI BRM BRR)
-		COMBO(199,&kp TAB,TLI TLM TLR)
-		COMBO(200,&kp TAB,TRI TRM TRR)
-		COMBO(201,&kp ESC,BLI BLM BLR LOT)
-		COMBO(202,&kp ESC,BRI BRM BRR ROT)
-		COMBO(203,&kp DEL,TLI TLM TLR LOT)
-		COMBO(204,&kp DEL,TRI TRM TRR ROT)
-		COMBO(205,&sk RALT,BLI BLM BLR LIT)
-		COMBO(206,&sk RALT,BRI BRM BRR RIT)
+		COMBO(177,&sk LEFT_GUI,BML TML)
+		COMBO(178,&sk LEFT_GUI,BMR TMR)
+		COMBO(179,&sk LEFT_SHIFT,BIL TIL)
+		COMBO(180,&sk LEFT_SHIFT,BIR TIR)
+        // navigation outer thumb
+		COMBO(181,&kp RIGHT,BPL TPL OTL)
+		COMBO(182,&kp RIGHT,BPR TPR OTR)
+		COMBO(183,&kp UP,BRL TRL OTL)
+		COMBO(184,&kp UP,BRR TRR OTR)
+		COMBO(185,&kp DOWN,BML TML OTL)
+		COMBO(186,&kp DOWN,BMR TMR OTR)
+		COMBO(187,&kp LEFT,BIL TIL OTL)
+		COMBO(188,&kp LEFT,BIR TIR OTR)
+        // navigation inner thumb
+		COMBO(189,&kp PG_UP,BPL TPL ITL)
+		COMBO(190,&kp PG_UP,BPR TPR ITR)
+		COMBO(191,&kp HOME,BRL TRL ITL)
+		COMBO(192,&kp HOME,BRR TRR ITR)
+		COMBO(193,&kp END,BML TML ITL)
+		COMBO(194,&kp END,BMR TMR ITR)
+		COMBO(195,&kp PG_DN,BIL TIL ITL)
+		COMBO(196,&kp PG_DN,BIR TIR ITR)
+        // three-finger combos
+		COMBO(197,&kp ENTER,BIL BML BRL)
+		COMBO(198,&kp ENTER,BIR BMR BRR)
+		COMBO(199,&kp TAB,TIL TML TRL)
+		COMBO(200,&kp TAB,TIR TMR TRR)
+		COMBO(201,&kp ESC,BIL BML BRL OTL)
+		COMBO(202,&kp ESC,BIR BMR BRR OTR)
+		COMBO(203,&kp DEL,TIL TML TRL OTL)
+		COMBO(204,&kp DEL,TIR TMR TRR OTR)
+		COMBO(205,&sk RALT,BIL BML BRL ITL)
+		COMBO(206,&sk RALT,BIR BMR BRR ITR)
 
     };
 
@@ -323,9 +360,9 @@
 		default_layer {
 			label = "Base";
 			bindings = <
-			&kp R       &kp S       &kp N       &kp I          &kp I       &kp N       &kp S       &kp R
-			&kp A       &kp O       &kp T       &kp E          &kp E       &kp T       &kp O       &kp A
-			&none                   &kp BKSP    &kp SPACE      &kp SPACE   &kp BKSP                &none
+			&kp R       &kp S       &kp T       &kp SPACE      &kp SPACE   &kp T       &kp S       &kp R
+			&kp O       &kp I       &kp A       &kp N          &kp N       &kp A       &kp I       &kp O
+			&none                   &kp BKSP    &kp E          &kp E       &kp BKSP                &none
 			>;
 		};
 
