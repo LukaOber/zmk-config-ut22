@@ -11,17 +11,17 @@
 // LAYERS
 // ====================================================
 #define BASE    0
-#define BLE     1
+//#define BLE     1
 
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <200>; };
-// Sticky Layer Behavior - release sticky behavior after x ms
+// &lt { quick_tap_ms = <200>; };
+// Sticky Key Behavior - release sticky behavior after x ms
 &sk { release-after-ms = <1800>; };
 
 // TAIPO DEFINITIONS (use in conjunction with TAIPO COMBOS)
 // ====================================================
-// ZMK forces you to define combos in terms of HW key positions
+// ZMK lets you define combos in terms of HW key positions
 /*
 	.-----------------------------------------------------------.
 	|  0  |  1  |  2  |  3  |           |  4  |  5  |  6  |  7  |
@@ -341,8 +341,7 @@
 		COMBO(205,&sk RALT,BIL BML BRL ITL)
 		COMBO(206,&sk RALT,BIR BMR BRR ITR)
         // bootloader
-        COMBO(207,&bootloader, BPL BRL BML BIL TIR TMR TRR TPR)
-        COMBO(208,&bootloader, TPL TRL TML TIL BIR BMR BRR BPR)
+        COMBO(207,&bootloader, EPL EPR)
 
     };
 
@@ -351,9 +350,9 @@
 
 /*  0 = Base
 	.-----------------------------------------------------------.
-	|  R  |  S  |  N  |  I  |           |  I  |  N  |  S  |  R  |
-	|  A  |  O  |  T  |  E  |           |  E  |  T  |  O  |  A  |
-	|     |-----| BKSP| SPC |           | SPC | BKSP|-----|     |
+	|  R  |  S  |  T  | SPC |           | SPC |  T  |  S  |  R  |
+	|  O  |  I  |  A  |  N  |           |  N  |  A  |  I  |  O  |
+	|     |-----| BKSP|  E  |           |  E  | BKSP|-----|     |
 	'-----'     '-----------------------------------'     '-----'
 */
 	keymap {
@@ -377,7 +376,6 @@
 	|  8  |  9  |  10 |  11 |           |  12 |  13 |  14 |  15 |
 	|  16 |-----|  17 |  18 |           |  19 |  20 |-----|  21 |
 	'-----'     '-----------------------------------'     '-----'
-*/
         // LAYER: BLE 1
 		ble_layer {
 			label = "BLE";
@@ -387,8 +385,8 @@
 			&kp Z                   &kp RALT    &kp SPACE      &kp SPACE   &kp RALT                &kp Z     
 			>;
 		};
+*/
 // -----------------------------------------------------------------------------
-
 // -----------------------------------------------------------------------------
     };
 };
