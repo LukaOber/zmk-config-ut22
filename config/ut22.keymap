@@ -45,8 +45,8 @@
 //   THUMBS
 #define OTL 18 // OUTER (reachy)
 #define ITL 17 // INNER (tucky)
-// [unused]
-// #define EPL 16 // EXTRA PINKY
+// [used only for accessing bootloader]
+#define EPL 16 // EXTRA PINKY
 
 // RIGHT SIDE
 //   TOP
@@ -62,8 +62,8 @@
 //   THUMBS
 #define OTR 19 // OUTER (reachy)
 #define ITR 20 // INNER (tucky)
-// [unused]
-// #define EPR 21 // EXTRA PINKY
+// [used only for accessing bootloader]
+#define EPR 21 // EXTRA PINKY
 
 // BEHAVIOR
 // ====================================================
@@ -341,7 +341,7 @@
 		COMBO(205,&sk RALT,BIL BML BRL ITL)
 		COMBO(206,&sk RALT,BIR BMR BRR ITR)
         // bootloader
-        COMBO(207,&bootloader, EPL EPR)
+        COMBO(207,&bootloader,EPL EPR)
 
     };
 
