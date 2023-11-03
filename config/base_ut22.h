@@ -43,21 +43,21 @@ combo_##NAME { \
 };
 
 #define COMBOS_TOP_ROW(LTPR, LTRM, LTMI, MTII, RTIM, RTMR, RTRP) \
-	COMBO(_ltpr, &kp LTPR, 0 1) \
-	COMBO(_ltrm, &kp LTRM, 1 2) \
-	COMBO(_ltmi, &kp LTMI, 2 3) \
-	COMBO(_mtii, &kp MTII, 3 4) \
-	COMBO(_rtim, &kp RTIM, 4 5) \
-	COMBO(_rtmr, &kp RTMR, 5 6) \
-	COMBO(_rtrp, &kp RTRP, 6 7)
+	COMBO(_ltpr, LTPR, 0 1) \
+	COMBO(_ltrm, LTRM, 1 2) \
+	COMBO(_ltmi, LTMI, 2 3) \
+	COMBO(_mtii, MTII, 3 4) \
+	COMBO(_rtim, RTIM, 4 5) \
+	COMBO(_rtmr, RTMR, 5 6) \
+	COMBO(_rtrp, RTRP, 6 7)
 #define COMBOS_BOT_ROW(LBPR, LBRM, LBMI, MBII, RBIM, RBMR, RBRP) \
-	COMBO(_lbpr, &kp LBPR, 8 9) \
-	COMBO(_lbrm, &kp LBRM, 9 10) \
-	COMBO(_lbmi, &kp LBMI, 10 11) \
-	COMBO(_mbii, &kp MBII, 11 12) \
-	COMBO(_rbim, &kp RBIM, 12 13) \
-	COMBO(_rbmr, &kp RBMR, 13 14) \
-	COMBO(_rbrp, &kp RBRP, 14 15)
+	COMBO(_lbpr, LBPR, 8 9) \
+	COMBO(_lbrm, LBRM, 9 10) \
+	COMBO(_lbmi, LBMI, 10 11) \
+	COMBO(_mbii, MBII, 11 12) \
+	COMBO(_rbim, RBIM, 12 13) \
+	COMBO(_rbmr, RBMR, 13 14) \
+	COMBO(_rbrp, RBRP, 14 15)
 
 
 //  _______________________  _______________________
@@ -84,8 +84,8 @@ combo_##NAME { \
         COMBO(x, &kp X, 12 13)
         COMBO(w, &kp W, 13 14) */
 
-	COMBOS_TOP_ROW(W, P, B, F, Q, COMMA, DOT)
-	COMBOS_BOT_ROW(RALT, G, K, J, X, Z, TAB)
+	COMBOS_TOP_ROW(&kp W, &kp P, &kp B, &kp F, &kp Q, &comsem, &dotcol)
+	COMBOS_BOT_ROW(&sk RALT, &kp G, &kp K, &kp J, &kp X, &kp Z, &kp TAB)
 
 /* usually on base layer */
         COMBO(sch, &macro_sch, 1 3)
@@ -100,7 +100,7 @@ combo_##NAME { \
         COMBO(rbkt, &kp RBKT, 5 13)
         COMBO(rbrc, &kp RBRC, 6 14)
 /* caps */
-        COMBO(caps, &caps_word, 11 12)
+        COMBO(caps, &caps_word, 2 5)
         COMBO(capslock, &kp CAPSLOCK, 1 6)
 /* deletion */
         COMBO(bspc, &kp BSPC, 4 6)
