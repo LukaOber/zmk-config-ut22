@@ -11,7 +11,7 @@
             bindings = <
                 &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H        &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
                 &kp V          &kp C          &kp D          &kp M              &kp L          &kp U          &kp Y          &kp SQT
-                &kp RALT                      &my_lt NUM ESC &my_lt NAV SPACE   &my_lt SYM E &my_lt FUN BSPC                 &kp RALT
+                &none                         &my_lt NUM ESC &my_lt NAV SPACE   &my_lt SYM E &my_lt FUN BSPC                 &none
             >;
         };
         numbers {
@@ -27,7 +27,7 @@
             label = "NAV";
 
             bindings = <
-                &hl LCTRL LEFT &hl LALT UP    &hl LGUI DOWN  &hl LSHFT RIGHT    &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT
+                &sk LCTRL      &sk LALT       &sk LGUI       &sk LSHFT          &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT
                 &kp INSERT     &kp C_VOL_UP   &kp C_VOL_DN   &kp C_MUTE         &kp HOME       &kp PG_DN      &kp PG_UP      &kp END
                 &trans                        &trans         &trans             &trans         &trans                        &trans
             >;

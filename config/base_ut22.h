@@ -42,16 +42,34 @@ combo_##NAME { \
     key-positions = <KEYPOS>; \
 };
 
+#define COMBOS_TOP_ROW(LTPR, LTRM, LTMI, MTII, RTIM, RTMR, RTRP) \
+	COMBO(_ltpr, &kp LTPR, 0 1) \
+	COMBO(_ltrm, &kp LTRM, 1 2) \
+	COMBO(_ltmi, &kp LTMI, 2 3) \
+	COMBO(_mtii, &kp MTII, 3 4) \
+	COMBO(_rtim, &kp RTIM, 4 5) \
+	COMBO(_rtmr, &kp RTMR, 5 6) \
+	COMBO(_rtrp, &kp RTRP, 6 7)
+#define COMBOS_BOT_ROW(LBPR, LBRM, LBMI, MBII, RBIM, RBMR, RBRP) \
+	COMBO(_lbpr, &kp LBPR, 8 9) \
+	COMBO(_lbrm, &kp LBRM, 9 10) \
+	COMBO(_lbmi, &kp LBMI, 10 11) \
+	COMBO(_mbii, &kp MBII, 11 12) \
+	COMBO(_rbim, &kp RBIM, 12 13) \
+	COMBO(_rbmr, &kp RBMR, 13 14) \
+	COMBO(_rbrp, &kp RBRP, 14 15)
+
+
 //  _______________________  _______________________
 // /  0  |  1  |  2  |  3  \/   4 |   5 |   6 |   7 \
 // \  8  |  9  | 10  | 11  /\  12 |  13 |  14 |  15 /
 //             \ 16  | 17 /  \ 18 |  19 /
 //              ----------    ----------
 
-/ {
+/{
     combos {
         compatible = "zmk,combos";
-/* alphas */
+/* alphas
         COMBO(comma, &comsem, 0 1)
         COMBO(f, &kp F, 1 2)
         COMBO(b, &kp B, 2 3)
@@ -64,10 +82,13 @@ combo_##NAME { \
         COMBO(k, &kp K, 10 11)
         COMBO(j, &kp J, 11 12)
         COMBO(x, &kp X, 12 13)
-        COMBO(w, &kp W, 13 14)
+        COMBO(w, &kp W, 13 14) */
+
+	COMBOS_TOP_ROW(W, P, B, F, Q, COMMA, DOT)
+	COMBOS_BOT_ROW(RALT, G, K, J, X, Z, TAB)
 
 /* usually on base layer */
-        COMBO(sch, &macro_sch, 0 2)
+        COMBO(sch, &macro_sch, 1 3)
         COMBO(enter, &kp ENTER, 12 14)
 /* parentheticals */
         COMBO(lt, &kp LT, 0 8)
